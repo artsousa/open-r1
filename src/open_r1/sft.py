@@ -101,7 +101,7 @@ def main(script_args, training_args, model_args):
     # Load datasets
     ################
     dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
-    # dataset['train'] = dataset['train'].select(range(5)) 
+    # dataset['train'] = dataset['train'].select(range(1000)) 
 
     ################
     # Load tokenizer
@@ -127,7 +127,7 @@ def main(script_args, training_args, model_args):
         quantization_config=quantization_config,
     )
     training_args.model_init_kwargs = model_kwargs
-
+    
     ############################
     # Initialize the SFT Trainer
     ############################
